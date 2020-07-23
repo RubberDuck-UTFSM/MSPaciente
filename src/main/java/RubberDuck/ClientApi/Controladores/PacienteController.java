@@ -27,8 +27,39 @@ public class PacienteController{
     @Qualifier("serviciopaciente")
     PacienteServicio servicio;
 
+    public static class Crear{
+        public String rut;
+        public String nombre;
+        public String apellido;
+        public String direccion;
+        public String telefono;
+        public String fecha_nacimiento;
+        public String antecedentes_medicos;
+        public int estado;
+        public String fecha_ingreso;
+        public int diagnostico;
+        public String programa_salud;
+
+        public Crear(){
+
+        }
+    }
+
     @PostMapping("/ingresar")
-    public boolean ingresarPaciente(@RequestBody @Valid Paciente paciente){
+    public boolean ingresarPaciente(@RequestBody @Valid Crear aux){
+
+        Paciente paciente = new Paciente();
+        paciente.setRut(aux.rut);
+        paciente.setNombre(aux.nombre);
+        paciente.setApellido(aux.apellido);
+        paciente.setDireccion(aux.direccion);
+        paciente.setTelefono(aux.telefono);
+        paciente.setFechaNacimiento(Date.valueOf(aux.fecha_nacimiento));
+        paciente.setAntecedentesMedicos(aux.antecedentes_medicos);
+        paciente.setEstado(aux.estado);
+        paciente.setFechaIngreso(Date.valueOf(aux.fecha_ingreso));
+        paciente.setDiagnostico(aux.diagnostico);
+        paciente.setProgramaSalud(aux.programa_salud);
         return servicio.crear(paciente);
     }
 
@@ -42,7 +73,7 @@ public class PacienteController{
         return servicio.obtenerId(id);
     }
 
-    @GetMapping("/obtenerEstado/{estado")
+    @GetMapping("/obtenerEstado/{estado}")
     public List<Long> obtenerEstado(@PathVariable("estado") int estado){
         return servicio.obtenerEstado(estado);
     }
@@ -52,21 +83,27 @@ public class PacienteController{
         return servicio.actualizarEstado(id,estado);
     }
 
-    public class Datos{
-        String rut;
-        String nombre;
-        String apellido;
-        String direccion;
-        String telefono;
-        Date fecha_nacimiento;
-        String antecedentes_medicos;
-        int diagnostico;
-        String programa_salud;
+    public static class Datos{
+        public String rut;
+        public String nombre;
+        public String apellido;
+        public String direccion;
+        public String telefono;
+        public String fecha_nacimiento;
+        public String antecedentes_medicos;
+        public int diagnostico;
+        public String programa_salud;
+
+        public Datos(){
+
+        }
     }
+
+
 
     @PutMapping("/actualizarDatos/{id}")
     public boolean actualizarDatos(@PathVariable("id") long id, @RequestBody Datos datos){
-        return servicio.actualizarDatos(id, datos.rut, datos.nombre, datos.apellido, datos.direccion, datos.telefono, datos.fecha_nacimiento, datos.antecedentes_medicos,datos.diagnostico,datos.programa_salud);
+        return servicio.actualizarDatos(id, datos.rut, datos.nombre, datos.apellido, datos.direccion, datos.telefono, Date.valueOf(datos.fecha_nacimiento), datos.antecedentes_medicos,datos.diagnostico,datos.programa_salud);
     }
 
     @GetMapping("/obtenerDiagnostico/{diagnostico}")
