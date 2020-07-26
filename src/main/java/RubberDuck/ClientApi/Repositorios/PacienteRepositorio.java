@@ -15,9 +15,11 @@ import org.springframework.data.repository.query.Param;
 @Repository("repositoriopaciente")
 public interface PacienteRepositorio extends JpaRepository<Paciente, Serializable>{
 
+    public abstract Paciente findByRut(String rut);
+
     public abstract Paciente findById(long id);
 
-    @Query(value="select id from public.paciente where estado = :estado",nativeQuery=true)
+    @Query(value="select id from public.paciente where estado = :estado",nativeQuery=true) 
     public abstract List<Long> obtenerEstado(@Param("estado") int estado);
 
     @Query(value="select id from public.paciente where diagnostico = :diagnostico",nativeQuery=true)

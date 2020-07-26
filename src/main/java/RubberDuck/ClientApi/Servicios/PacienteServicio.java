@@ -31,6 +31,10 @@ public class PacienteServicio{
         return repositorio.findById(id);
     }
 
+    public Paciente obtenerRut(String rut){
+        return repositorio.findByRut(rut);
+    }
+
     public List<Long> obtenerEstado(int estado){
         return repositorio.obtenerEstado(estado);
     }
@@ -66,7 +70,9 @@ public class PacienteServicio{
     public boolean actualizarDatos(long id, String rut, String nombre, String apellido, String direccion, String telefono, Date fecha_nacimiento, String antecedentes_medicos, int diagnostico, String programa_salud){
         try{
             Paciente paciente = repositorio.findById(id);
-            paciente.setRut(rut);
+            if(rut != paciente.getRut()){
+                paciente.setRut(rut);
+            }
             paciente.setNombre(nombre);
             paciente.setApellido(apellido);
             paciente.setDireccion(direccion);
