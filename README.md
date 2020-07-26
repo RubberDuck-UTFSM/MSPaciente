@@ -5,7 +5,8 @@ API para proyecto de ISW - 2020-1
 La API está siendo hosteada en el siguiente dominio: https://ms-paciente.herokuapp.com/
 
 Para probarla, utilizar programas como *Postman*.
-Los EndPoints disponibles están descritos en el Informe entrgado.
+
+Los EndPoints disponibles están descritos en el Informe entregado.
 
 Un ejemplo de utilización sería:
 
