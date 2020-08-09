@@ -26,6 +26,9 @@ public class PacienteServicio{
         }
     }
 
+    public List<Paciente> obtenerTodo(){
+        return repositorio.findAll();
+    }
 
     public Paciente obtenerId(long id){
         return repositorio.findById(id);

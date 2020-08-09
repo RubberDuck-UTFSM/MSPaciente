@@ -278,4 +278,10 @@ public class PacienteController {
             return respuesta;
         }
     }
+
+    @GetMapping("/obtenerTodo")
+    public List<Paciente> obtenerTodo(){
+        return servicio.obtenerTodo();
+    }
+
 }

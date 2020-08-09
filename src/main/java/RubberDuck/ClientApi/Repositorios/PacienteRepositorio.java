@@ -15,6 +15,8 @@ import org.springframework.data.repository.query.Param;
 @Repository("repositoriopaciente")
 public interface PacienteRepositorio extends JpaRepository<Paciente, Serializable>{
 
+    public abstract List<Paciente> findAll();
+
     public abstract Paciente findByRut(String rut);
 
     public abstract Paciente findById(long id);
