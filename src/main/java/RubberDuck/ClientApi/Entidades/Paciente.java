@@ -120,21 +120,22 @@ public class Paciente{
         this.telefono = telefono;
     }
 
-    public Date getFechaNacimiento(){
+    public Date getFecha_nacimiento(){
         return this.fecha_nacimiento;
     }
 
-    public void setFechaNacimiento(Date fecha_nacimiento){
+    public void setFecha_nacimiento(Date fecha_nacimiento){
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public String getAntecedentesMedicos(){
+    public String getAntecedentes_medicos(){
         return this.antecedentes_medicos;
     }
 
-    public void setAntecedentesMedicos(String antecedentes_medicos){
+    public void setAntecedentes_medicos(String antecedentes_medicos){
         this.antecedentes_medicos = antecedentes_medicos;
     }
+
 
     public int getEstado(){
         return this.estado;
@@ -144,11 +145,11 @@ public class Paciente{
         this.estado = estado;
     }
 
-    public Date getFechaIngreso(){
+    public Date getFecha_ingreso(){
         return this.fecha_ingreso;
     }
 
-    public void setFechaIngreso(Date fecha_ingreso){
+    public void setFecha_ingreso(Date fecha_ingreso){
         this.fecha_ingreso = fecha_ingreso;
     }
 
@@ -160,11 +161,11 @@ public class Paciente{
         this.diagnostico = diagnostico;
     }
 
-    public String getProgramaSalud(){
+    public String getPrograma_salud(){
         return this.programa_salud;
     }
 
-    public void setProgramaSalud(String programa_salud){
+    public void setPrograma_salud(String programa_salud){
         this.programa_salud = programa_salud;
     }
 }

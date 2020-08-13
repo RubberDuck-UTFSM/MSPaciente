@@ -80,10 +80,10 @@ public class PacienteServicio{
             paciente.setApellido(apellido);
             paciente.setDireccion(direccion);
             paciente.setTelefono(telefono);
-            paciente.setFechaNacimiento(fecha_nacimiento);
-            paciente.setAntecedentesMedicos(antecedentes_medicos);
+            paciente.setFecha_nacimiento(fecha_nacimiento);
+            paciente.setAntecedentes_medicos(antecedentes_medicos);
             paciente.setDiagnostico(diagnostico);
-            paciente.setProgramaSalud(programa_salud);
+            paciente.setPrograma_salud(programa_salud);
             repositorio.save(paciente);
             return true;
         } catch (Exception e){

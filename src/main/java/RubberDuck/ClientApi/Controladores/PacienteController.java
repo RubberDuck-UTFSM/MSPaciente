@@ -90,15 +90,15 @@ public class PacienteController {
             paciente.setApellido(aux.apellido);
             paciente.setDireccion(aux.direccion);
             paciente.setTelefono(aux.telefono);
-            paciente.setFechaNacimiento(fn);
-            paciente.setAntecedentesMedicos(aux.antecedentes_medicos);
+            paciente.setFecha_nacimiento(fn);
+            paciente.setAntecedentes_medicos(aux.antecedentes_medicos);
             paciente.setEstado(aux.estado);
 
             java.util.Date date = new Date(System.currentTimeMillis());
 
-            paciente.setFechaIngreso(new Date(date.getTime()));
+            paciente.setFecha_ingreso(new Date(date.getTime()));
             paciente.setDiagnostico(aux.diagnostico);
-            paciente.setProgramaSalud(aux.programa_salud);
+            paciente.setPrograma_salud(aux.programa_salud);
                
             servicio.crear(paciente);
             return new ResponseEntity<>(
